@@ -27,6 +27,23 @@ app.config(function($routeProvider,$httpProvider){
 		templateUrl:'templates/add_product.html',
 		controller:'ProductCtrl as Ctrl'
 	})
+
+    .when('/edit_product/',{
+        // console.log('edit_product'),
+        templateUrl:'templates/edit_product.html',
+        controller: 'EditProduct as Ctrl',
+        resolve:{
+            path:function($location){
+                if(localStorage.getItem('authToken') == null){
+                    $location.path('login');
+                }
+            },
+            products:function(productService){
+                return productService.getProducts();
+            }
+        }
+    })
+
 	.otherwise({
 		redirectTo:'/'
 	});

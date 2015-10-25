@@ -1,0 +1,48 @@
+<h1 class="centreText">
+    Edit Product
+</h1>
+
+<table class="u-full-width">
+        <thead>
+            <tr>
+                <th><strong>Name</strong></th>
+                <th><strong>Description</strong></th>
+                <th><strong>Price</strong></th>
+                <th><stong>Stock Quantity</stong></th>
+                <th><strong>Status</strong></th>
+                <th><strong>Edit</strong></th>
+                <th><strong>Delete</strong></th>
+            </tr>
+            <tr ng-repeat="product in Ctrl.products">
+                <th>{{product.name}}</th>
+                <th>{{product.description}}</th>
+                <th>{{product.price}}</th>
+                <th>{{product.quantity}}</th>
+                <th>{{product.status}}</th>
+                <!-- <th><a>Edit Item</a></th> -->
+                <th><a>Delete Item</a></th>
+            </tr>
+        </thead>
+
+    </table>
+
+
+<div class="row">
+    <div class="three columns">
+        <form ng-submit="Ctrl.editProduct(name,description,price,category,quantity,status)">
+            <input type="text" ng-model="name" placeholder="name">
+            <textarea ng-model="description" placeholder="description"></textarea>
+            <input type="text" ng-model="price" placeholder="price">
+            <input type="text" ng-model="category" placeholder="category">
+            <input type="text" ng-model="quantity" placeholder="quantity">
+            <select ng-model="status">
+                    <option value="" selected>Status</option>
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+            </select>
+            <button>Add Product</button>
+        </form>
+    </div>
+</div>
+
+<a href="/#/home">Home</a>

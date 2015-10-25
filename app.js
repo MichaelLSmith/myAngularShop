@@ -28,7 +28,7 @@ app.config(function($routeProvider,$httpProvider){
 		controller:'ProductCtrl as Ctrl'
 	})
 
-    .when('/edit_product/',{
+    .when('/edit_product/:productId',{
         // console.log('edit_product'),
         templateUrl:'templates/edit_product.html',
         controller: 'EditProduct as Ctrl',

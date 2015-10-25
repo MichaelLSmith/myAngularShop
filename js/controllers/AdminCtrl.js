@@ -11,6 +11,11 @@ function AdminCtrl(productService,$location,products){
 
 }
 
+// AdminCtrl.prototype.changeId = function(id){
+//    console.log('changeID');
+//     this.location.path('edit_product/'+ id);
+// }
+
 AdminCtrl.prototype.logout = function(){
     localStorage.removeItem('products');
     localStorage.removeItem('authToken');

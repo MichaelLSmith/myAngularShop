@@ -28,7 +28,9 @@
                 <th>{{product.price}}</th>
                 <th>{{product.quantity}}</th>
                 <th>{{product.status}}</th>
-                <th><a>Edit Item</a></th>
+                <th><a href="/#/edit_product/{{product.productId}}">Edit Item</a></th>
+                <!-- ng-click="Ctrl.changeId({{product.productId}})" -->
+                <!--  -->
                 <th><a>Delete Item</a></th>
             </tr>
         </thead>

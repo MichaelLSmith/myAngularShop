@@ -35,6 +35,7 @@ ProductService.prototype.getProducts = function(){
 		return JSON.parse(self.products);
 	}
 }
+
 ProductService.prototype.addProduct = function(product){
  	//TODO: add the new product to the current product list and
  	//return the updated list

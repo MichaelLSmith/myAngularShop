@@ -2,41 +2,19 @@
     <h1 class="centreText">
         Edit Product
     </h1>
-
-    <table class="u-full-width">
-            <thead>
-                <tr>
-                    <th><strong>Name</strong></th>
-                    <th><strong>Description</strong></th>
-                    <th><strong>Price</strong></th>
-                    <th><stong>Stock Quantity</stong></th>
-                    <th><strong>Status</strong></th>
-                    <th><strong>Edit</strong></th>
-                    <th><strong>Delete</strong></th>
-                </tr>
-                <tr ng-repeat="product in Ctrl.products">
-                    <th>{{product.name}}</th>
-                    <th>{{product.description}}</th>
-                    <th>{{product.price}}</th>
-                    <th>{{product.quantity}}</th>
-                    <th>{{product.status}}</th>
-                    <!-- <th><a>Edit Item</a></th> -->
-                    <th><a>Delete Item</a></th>
-                </tr>
-            </thead>
-
-        </table>
-
-
     
     <form ng-submit="Ctrl.editProduct(name,description,price,category,quantity,status)">
         <article class="row">
-            <section class="six columns">
-                <input class="u-full-width" type="text" ng-model="name" placeholder="name">
-                <textarea class="u-full-width" ng-model="description" placeholder="description"></textarea>
+            <section class="twelve columns">
+                <label for="name">Name: {{Ctrl.product.name}}:</label>
+                <input id="name" class="u-full-width" type="text" ng-model="name" placeholder="{{Ctrl.product.name}}">
             </section>
-            <section class="six columns">
-                <input type="text" ng-model="price" placeholder="price">
+            <section class="twelve columns">
+                <label for="description">{{Ctrl.product.description}}</label>
+                <textarea id="description" class="u-full-width" ng-model="description" placeholder="{{Ctrl.product.description}}"></textarea>
+            </section>
+            <section class="twelve columns">
+                <input type="text" ng-model="price" placeholder="{{property.price}}">
                 <input type="text" ng-model="category" placeholder="category">
                 <input type="text" ng-model="quantity" placeholder="quantity">
                 <select ng-model="status">
@@ -44,7 +22,7 @@
                         <option value="active">Active</option>
                         <option value="inactive">Inactive</option>
                 </select>
-                <button>Add Product</button>
+                <button>Make </button>
             </section>
         </article>
     </form>

@@ -1,4 +1,4 @@
-var app = angular.module('ShopApp',['ngRoute']);
+var app = angular.module('ShopApp',['ngRoute','ui.bootstrap']);
 
 app.config(function($routeProvider,$httpProvider){
 	$routeProvider.when('/',{

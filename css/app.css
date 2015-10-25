@@ -1,3 +1,7 @@
+/*UI-Bootstrap dependent Sytle-From getting started UI Bootstrap doc*/
+
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
 .container {
   max-width: 85%;
 }

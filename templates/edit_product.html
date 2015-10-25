@@ -3,25 +3,25 @@
         Edit Product
     </h1>
     
-    <form ng-submit="Ctrl.editProduct(name,description,price,category,quantity,status,Ctrl.product.productId)">
+    <form ng-submit="Ctrl.editProduct(Ctrl.product.name,Ctrl.product.description,Ctrl.product.price,Ctrl.product.category,Ctrl.product.quantity,Ctrl.product.status,Ctrl.product.productId)">
         <article class="row">
             <section class="twelve columns">
                 <label for="name">Name: {{Ctrl.product.name}}:</label>
-                <input id="name" class="u-full-width" type="text" ng-model="name" placeholder="{{Ctrl.product.name}}">
+                <input id="name" class="u-full-width" type="text" ng-model="Ctrl.product.name">
             </section>
             <section class="twelve columns">
                 <label for="description">Description: {{Ctrl.product.description}}</label>
-                <textarea id="description" class="u-full-width" ng-model="description" placeholder="{{Ctrl.product.description}}"></textarea>
+                <textarea id="description" class="u-full-width" ng-model="Ctrl.product.description"></textarea>
             </section>
             <section class="twelve columns">
                 <label for="price">Price: ${{Ctrl.product.price}}</label>
-                <input id="price" type="text" ng-model="price" placeholder="${{Ctrl.product.price}}">
+                <input id="price" type="text" ng-model="Ctrl.product.price" placeholder=>
                 <label for="category">Category: {{Ctrl.product.category}}</label>
-                <input id="category" type="text" ng-model="category" placeholder="{{Ctrl.product.category}}">
+                <input id="category" type="text" ng-model="Ctrl.product.category">
                 <label for="quantity">Quantity: {{Ctrl.product.quantity}}</label>
-                <input id="quantity" type="text" ng-model="quantity" placeholder="{{Ctrl.product.quantity}}">
+                <input id="quantity" type="text" ng-model="Ctrl.product.quantity">
                 <label for="status">Status: {{Ctrl.product.status}}</label>
-                <select id="status" ng-model="status">
+                <select id="status" ng-model="Ctrl.product.status">
                         <option value="" selected>Status</option>
                         <option value="active">Active</option>
                         <option value="inactive">Inactive</option>
@@ -32,8 +32,53 @@
             </section>
         </article>
     </form>
-    <section class="six columns"><button ng-click="Ctrl.deleteProduct()">Delete Product</button></section>
 
-    <a href="/#/home">Home</a>  
+    <section class="twelve columns">
+        <div class="row">
+            <table class="table">
+                <tr>
+                    <td><strong>Name</strong></td>
+                    <td >
+                    <!-- ng-bind="Ctrl.product.name" -->
+                        <uib-accordion>
+                            <uib-accordion-group heading="{{Ctrl.product.name}}">
+                               <input type="text" ng-model="Ctrl.product.name">
+                            </uib-accordion-group>
+                        </uib-accordion>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Description</strong></td>
+                    <td ng-bind="Ctrl.product.description"></td>
+                </tr>
+                <tr>
+                    <td><strong>Image</strong></td>
+                    <td ng-bind="Ctrl.product.image"></td>
+                </tr>
+                <tr>
+                    <td><strong>Price</strong></td>
+                    <td ng-bind="Ctrl.product.price"></td>
+                </tr>
+                <tr>
+                    <td><strong>Quantity</strong></td>
+                    <td ng-bind="Ctrl.product.quantity"></td>
+                </tr>
+                <tr>
+                    <td><strong>Status</strong></td>
+                    <td ng-bind="Ctrl.product.status"></td>
+                </tr>
+                <tr>
+                    <td><strong>Category</strong></td>
+                    <td ng-bind="Ctrl.product.category"></td>
+                </tr>
+                <!-- <tr>
+                    <td></td>
+                    <td ng-bind="Ctrl.product."></td>
+                </tr> -->
+            </table>
+        </div>
+    </section>
+
 <!-- end container -->
 </div>

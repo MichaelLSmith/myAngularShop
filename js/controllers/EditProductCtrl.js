@@ -5,6 +5,8 @@ app.controller('EditProductCtrl',EditProductCtrl);
 function EditProductCtrl(productService,products,$location,$routeParams){
     this.location = $location;
     this.productId = $routeParams.productId;
+    // this.name = this.product.name;
+
     
     //services
     this.productService = productService;
@@ -23,7 +25,16 @@ EditProductCtrl.prototype.getProduct = function(id) {
 }
 
 EditProductCtrl.prototype.editProduct = function(name,description,price,category,quantity,status){
-    // var self = this;
+    // self = this;
+    name = this.product.name;
+    console.log(name);
+    console.log(this.product.name);
+    // console.log(self.product.name);
+    description = this.product.description;
+    price = this.product.price;
+    category = this.product.category;
+    quantity = this.product.quantity;
+
     console.log('editProduct');
     var request_body = {
         name:name,

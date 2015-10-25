@@ -3,29 +3,36 @@
         Edit Product
     </h1>
     
-    <form ng-submit="Ctrl.editProduct(name,description,price,category,quantity,status)">
+    <form ng-submit="Ctrl.editProduct(name,description,price,category,quantity,status,Ctrl.product.productId)">
         <article class="row">
             <section class="twelve columns">
                 <label for="name">Name: {{Ctrl.product.name}}:</label>
                 <input id="name" class="u-full-width" type="text" ng-model="name" placeholder="{{Ctrl.product.name}}">
             </section>
             <section class="twelve columns">
-                <label for="description">{{Ctrl.product.description}}</label>
+                <label for="description">Description: {{Ctrl.product.description}}</label>
                 <textarea id="description" class="u-full-width" ng-model="description" placeholder="{{Ctrl.product.description}}"></textarea>
             </section>
             <section class="twelve columns">
-                <input type="text" ng-model="price" placeholder="{{property.price}}">
-                <input type="text" ng-model="category" placeholder="category">
-                <input type="text" ng-model="quantity" placeholder="quantity">
-                <select ng-model="status">
+                <label for="price">Price: ${{Ctrl.product.price}}</label>
+                <input id="price" type="text" ng-model="price" placeholder="${{Ctrl.product.price}}">
+                <label for="category">Category: {{Ctrl.product.category}}</label>
+                <input id="category" type="text" ng-model="category" placeholder="{{Ctrl.product.category}}">
+                <label for="quantity">Quantity: {{Ctrl.product.quantity}}</label>
+                <input id="quantity" type="text" ng-model="quantity" placeholder="{{Ctrl.product.quantity}}">
+                <label for="status">Status: {{Ctrl.product.status}}</label>
+                <select id="status" ng-model="status">
                         <option value="" selected>Status</option>
                         <option value="active">Active</option>
                         <option value="inactive">Inactive</option>
                 </select>
-                <button>Make </button>
+            </section>
+            <section >
+                <button>Make Changes</button>
             </section>
         </article>
     </form>
+    <section class="six columns"><button ng-click="Ctrl.deleteProduct()">Delete Product</button></section>
 
     <a href="/#/home">Home</a>  
 <!-- end container -->

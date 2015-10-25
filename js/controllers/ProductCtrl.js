@@ -15,7 +15,6 @@ ProductCtrl.prototype.addProduct = function(name,description,price,category,quan
 		quantity:quantity,
 		status:status
 	}
-	this.productService.setProducts
-	// this.productService.addProduct(request_body);
+	this.productService.addProduct(request_body);
 
 }

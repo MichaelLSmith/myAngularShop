@@ -1,6 +1,8 @@
-app.controller('EditProduct',EditProduct);
+app.controller('EditProductCtrl',EditProductCtrl);
 
-function EditProduct(productService,products,$location,$routeParams){
+//could you reuse productCtrl to control edit_product.html?
+
+function EditProductCtrl(productService,products,$location,$routeParams){
     this.location = $location;
     this.productId = $routeParams.productId;
     
@@ -13,18 +15,26 @@ function EditProduct(productService,products,$location,$routeParams){
 
 }
 
-EditProduct.prototype.getProduct = function(id) {
+EditProductCtrl.prototype.getProduct = function(id) {
     console.log('getProduct');
   return this.products.filter(function(product) {
     return product.productId === id})[0];
   //loops through the entire localStorage.products array. It then puts all the objects into a new array that fit the requirements that equal the 'id'. This will only ever return one object. the [0] sercurity buffer. If more than one product has the same id, it will only put the first product with the id into the array.
 }
 
-EditProduct.prototype.printProduct = function(){
-    console.log('printProduct');
-    console.log(product.productId);
+EditProductCtrl.prototype.editProduct = function(name,description,price,category,quantity,status){
+    // var self = this;
+    console.log('editProduct');
+    var request_body = {
+        name:name,
+        description:description,
+        price:price,
+        category:category,
+        quantity:quantity,
+        status:status
+    }
+    console.log(request_body);
+    console.log(this.productId);
+    this.productService.editProduct(request_body, this.productId);
 }
 
-EditProduct.prototype.editProduct = function(){
-
-}

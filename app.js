@@ -34,10 +34,8 @@ app.config(function($routeProvider,$httpProvider){
         resolve:{
             path:function($location){
                 if(localStorage.getItem('authToken') == null){
-                    $location.path('login');
+                    $location.path('/login');
                 }
-        //     }
-        // }
             },
             products:function(productService){
                 return productService.getProducts();

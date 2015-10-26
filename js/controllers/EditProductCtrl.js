@@ -24,26 +24,19 @@ EditProductCtrl.prototype.getProduct = function(id) {
   //loops through the entire localStorage.products array. It then puts all the objects into a new array that fit the requirements that equal the 'id'. This will only ever return one object. the [0] sercurity buffer. If more than one product has the same id, it will only put the first product with the id into the array.
 }
 
-EditProductCtrl.prototype.editProduct = function(name,description,price,category,quantity,status){
-    // self = this;
-    name = this.product.name;
-    console.log(name);
-    console.log(this.product.name);
-    // console.log(self.product.name);
-    description = this.product.description;
-    price = this.product.price;
-    category = this.product.category;
-    quantity = this.product.quantity;
+EditProductCtrl.prototype.editProduct = function(){
+    //var self = this;
+    
 
-    console.log('editProduct');
     var request_body = {
-        name:name,
-        description:description,
-        price:price,
-        category:category,
-        quantity:quantity,
-        status:status
+        name:this.product.name,
+        description:this.product.description,
+        price:this.product.price,
+        category:this.product.category,
+        quantity:this.product.quantity,
+        status:this.product.status
     }
+    
     console.log(request_body);
     console.log(this.productId);
     this.productService.editProduct(request_body, this.productId);

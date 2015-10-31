@@ -3,14 +3,13 @@ app.service('productService',ProductService);
 function ProductService(api){
 	//services
 	this.api = api;
-
 	this.products = localStorage.getItem('products');
 }
 
 
 ProductService.prototype.retrieveProducts = function(){
 	var self = this;
-	console.log(localStorage)
+	console.log('localStorage =' + localStorage)
 	return this.api.request('/retrieve_products/team3',{},'GET');
 }
 
@@ -40,10 +39,9 @@ ProductService.prototype.getProducts = function(){
 		}  
 		else if (typeof self.products == 'object'){
 
-			console.log(JSON.parse(self.products));
+			console.log(self.products);
 			return self.products;
-		}
-		
+		}		
 	}
 }
 
@@ -53,7 +51,7 @@ ProductService.prototype.addProduct = function(product){
 	return this.api.request('/newproduct',product,'POST')
 			.then(function(response){
 				console.log(response);
-			});;
+			});
 
 }
 
@@ -64,10 +62,11 @@ product: object containing key/value pairs of product properties
 id: comes from product property: productId
 */
 ProductService.prototype.editProduct = function(product,id){
-	console.log(product);
+	var self = this;
 	console.log(id);
     return this.api.request('/editproduct/' + id,product,'POST')
     .then(function(response){
+    	self.getProducts(response);
         console.log(response);
     });
 }

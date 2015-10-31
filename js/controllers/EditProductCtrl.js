@@ -40,5 +40,6 @@ EditProductCtrl.prototype.editProduct = function(){
     console.log(request_body);
     console.log(this.productId);
     this.productService.editProduct(request_body, this.productId);
+    this.location.path('/admin');
 }
 

@@ -4,6 +4,16 @@ app.config(function($routeProvider,$httpProvider){
 	$routeProvider.when('/',{
 		templateUrl:'templates/home.html',
 		controller:'MainCtrl as Ctrl',
+        resolve:{
+            path:function($location){
+                    if(localStorage.getItem('authToken') == null){
+                        $location.path('/login');
+                    }
+                },
+            products:function(productService){
+                    return productService.getProducts();
+                }
+            }
 	})
 	.when('/login',{
 		templateUrl:'templates/login.html',

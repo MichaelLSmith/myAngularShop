@@ -2,7 +2,6 @@ app.service('ordersService',OrdersService);
 
 function OrdersService(api){
     this.api = api;
-    // this.product = product
     this.cart = [];
 }
 
@@ -21,5 +20,7 @@ OrdersService.prototype.createOrder = function(orderData){
             console.log(response);
         });
 }
+
+
     
 

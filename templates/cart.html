@@ -5,7 +5,7 @@
     </header>
 
     <main class="innerContainer">
-        <button ng-click="Ctrl.viewContents()">View Cart Contents</button>
+        <button ng-click="Ctrl.viewContents()">View Cart Contents in Console</button>
         <table class="u-full-width">
                         <thead>
                             <tr>
@@ -19,7 +19,7 @@
                                 <td>{{product.name}}</td>
                                 <td>{{product.price}}</td>
                                 <td>Quantity to Purchase Placeholder</td>
-                                <td><a>Remove Item</a></td>
+                                <td><a href="" ng-click="Ctrl.removeProduct(product.productId)">Remove Item</a></td>
                             </tr>
                         </thead>
             

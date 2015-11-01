@@ -21,8 +21,6 @@ ViewProductCtrl.prototype.getProduct = function(id){
 /*Returns the product object into */
 
 ViewProductCtrl.prototype.returnProductObject = function(){
-    console.log('returnProductObject');
-    console.log(this.product);
     //call to addToCart, which should push the product object into the cart array which is stored in the ordersService. Please work!
     this.ordersService.addToCart(this.product)
     // return this.product;

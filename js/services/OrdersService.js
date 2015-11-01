@@ -17,7 +17,7 @@ OrdersService.prototype.addToCart = function(product){
 
 
 /*Called by CartCtrl to display items on Cart page*/
-OrdersService.prototype.getCart = function(){
-    console.log(this.cart);
-    return this.cart;
-}
+// OrdersService.prototype.getCart = function(){
+//     console.log(this.cart);
+//     return this.cart;
+// }

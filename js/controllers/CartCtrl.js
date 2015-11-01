@@ -7,3 +7,7 @@ function CartCtrl(ordersService){
 
 }
 
+CartCtrl.prototype.viewContents = function(){
+    console.log(this.cart);
+}
+

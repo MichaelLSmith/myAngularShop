@@ -66,11 +66,6 @@ app.config(function($routeProvider,$httpProvider){
     .when('/cart',{
         templateUrl:'templates/cart.html',
         controller: 'CartCtrl as Ctrl'
-        // resolve:{
-        //     cart:function(ordersService){
-        //         return ordersService.getCart();
-        //     }
-        // }
     })
         
 	.otherwise({

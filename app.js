@@ -1,4 +1,4 @@
-var app = angular.module('ShopApp',['ngRoute','ui.bootstrap']);
+var app = angular.module('ShopApp',['ngRoute']);
 
 app.config(function($routeProvider,$httpProvider){
 	$routeProvider.when('/',{
@@ -53,6 +53,16 @@ app.config(function($routeProvider,$httpProvider){
         }
     })
 
+    .when('/view_product/:productId',{
+        templateUrl:'templates/view_product.html',
+        controller: 'ViewProductCtrl as Ctrl',
+        resolve:{
+            products:function(productService){
+                return productService.getProducts();
+            }
+        }
+    })
+        
 	.otherwise({
 		redirectTo:'/'
 	});

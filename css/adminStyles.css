@@ -26,6 +26,17 @@
     margin-top: 5px;
 }
 
+/*ProductPage CSS*/
+
+.responsiveImage {
+  max-width: 100%;
+  height: auto;
+}
+
+.quantityInput {
+  width: 59px;
+}
+
 /*Nav Bar*/
 
 .adminContainer .nav {

@@ -5,7 +5,6 @@ app.controller('EditProductCtrl',EditProductCtrl);
 function EditProductCtrl(productService,products,$location,$routeParams){
     this.location = $location;
     this.productId = $routeParams.productId;
-    // this.name = this.product.name;
 
     
     //services
@@ -18,19 +17,17 @@ function EditProductCtrl(productService,products,$location,$routeParams){
 }
 
 EditProductCtrl.prototype.getProduct = function(id) {
-    console.log('getProduct');
   return this.products.filter(function(product) {
     return product.productId === id})[0];
   //loops through the entire localStorage.products array. It then puts all the objects into a new array that fit the requirements that equal the 'id'. This will only ever return one object. the [0] sercurity buffer. If more than one product has the same id, it will only put the first product with the id into the array.
 }
 
 EditProductCtrl.prototype.editProduct = function(){
-    //var self = this;
     
-
     var request_body = {
         name:this.product.name,
         description:this.product.description,
+        image:this.product.image,
         price:this.product.price,
         category:this.product.category,
         quantity:this.product.quantity,

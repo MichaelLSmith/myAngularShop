@@ -1,12 +1,22 @@
 <section class="adminContainer">
-    <div class="loginContainer">
+    <div class="innerContainer">
         <div class="row">
             <div class="twelve columns">
                 <h1 class="centreText">Edit Product</h1>
     
                 <form ng-submit="Ctrl.editProduct()">
                     <article class="row">
-                        <section class="twelve columns">
+                        <section class="six columns">
+                           <img class="responsiveImage" ng-src="{{Ctrl.product.image}}">
+                        </section>
+                        <section class="six columns">
+                            <label for="image">Image URL:</label>
+                            <input type="url" class="u-full-width" ng-model="Ctrl.product.image">
+                        </section>
+                        <hr>
+                    </article>
+                    <article class="row">
+                        <section class="six columns">
                             <label for="name">Name: {{Ctrl.product.name}}:</label>
                             <input id="name" class="u-full-width" type="text" ng-model="Ctrl.product.name">
                         </section>
@@ -28,6 +38,8 @@
                                     <option value="inactive">Inactive</option>
                             </select>
                         </section>
+                    </article>
+                    <article class="row">
                         <section >
                             <button>Make Changes</button>
                         </section>

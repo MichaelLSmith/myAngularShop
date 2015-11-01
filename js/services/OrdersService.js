@@ -12,9 +12,11 @@ Cart array - When 'addToCart' button is pressed on individual products page, the
 
 OrdersService.prototype.addToCart = function(product){
     this.cart.push(product);
-    console.log(cart);
+    console.log(this.cart);
 }
 
+
+/*Called by CartCtrl to display items on Cart page*/
 OrdersService.prototype.getCart = function(){
     console.log(this.cart);
     return this.cart;

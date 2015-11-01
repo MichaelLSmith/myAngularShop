@@ -25,3 +25,7 @@ CartCtrl.prototype.removeProduct = function(id){
     // console.log(this.cart);
 }
 
+CartCtrl.prototype.clearCart = function(){
+    //clears cart array stored in OrdersService
+}
+

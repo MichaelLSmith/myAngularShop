@@ -1,10 +1,4 @@
-<div class="adminContainer">
-
-    <header class="innerContainer">
-        <h1 class="centreText">Cart</h1>
-    </header>
-
-    <main class="innerContainer">
+ <main class="innerContainer">
         <button ng-click="Ctrl.viewContents()">View Cart Contents in Console</button>
         <table class="u-full-width">
             <thead>
@@ -22,8 +16,12 @@
                     <td><a href="" ng-click="Ctrl.removeProduct(product.productId)">Remove Item</a></td>
                 </tr>
             </thead>
-            
-                    </table>
-        <a href="/#/">Close Cart</a>
+
+        </table>
+
+        <a class="button button-primary" href="/#/cart">Confirm Order</a>
+        <a class="button button-primary" href="/#/">Cancel Order</a>
+        <!-- <a href="/#/">View Cart to change Order</a> -->
+
     </main>
 </div>

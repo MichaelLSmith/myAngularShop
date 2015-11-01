@@ -15,9 +15,11 @@ OrdersService.prototype.addToCart = function(product){
     console.log(this.cart);
 }
 
+OrdersService.prototype.createOrder = function(orderData){
+    return this.api.request('/record_order',orderData,'POST')
+        .then(function(response){
+            console.log(response);
+        });
+}
+    
 
-/*Called by CartCtrl to display items on Cart page*/
-// OrdersService.prototype.getCart = function(){
-//     console.log(this.cart);
-//     return this.cart;
-// }

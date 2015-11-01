@@ -67,6 +67,8 @@ app.config(function($routeProvider,$httpProvider){
         templateUrl:'templates/cart.html',
         controller: 'CartCtrl as Ctrl'
     })
+
+    // .when('/order')
         
 	.otherwise({
 		redirectTo:'/'

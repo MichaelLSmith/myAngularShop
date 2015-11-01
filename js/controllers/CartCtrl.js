@@ -1,20 +1,9 @@
-app.controller('cartCtrl',CartCtrl);
+app.controller('CartCtrl',CartCtrl);
 
-function CartCtrl(productService,$location,products){
-    this.location = $location;
-
+function CartCtrl(ordersService){
+    this.ordersService = ordersService;
+    this.cart = ordersService.cart;
     //services
-    this.productService = productService;
-    this.products = products;
 
 }
 
-/*Function to add product objects to cart array
-
-
-*/
-
-CartCtrl.prototype.addToCart = (){
-    
-    var cart = [];
-}
